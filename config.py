@@ -3,9 +3,9 @@ import torch
 import os
 
 # base path of the dataset
-base_path = "/Users/Gabriel/MRes Medical Imaging/RESEARCH_PROJECT/BasicSeg/"
+base_path = "/Users/Gabriel/MResMedicalImaging/RESEARCH_PROJECT/BasicSeg/"
 
-DATASET_PATH = os.path.join(base_path,"dataset","oxford-iiit-pet","train")
+DATASET_PATH = os.path.join(base_path,"dataset","oxford-iiit-pet")
 
 # define the path to the images and masks dataset
 IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images")
@@ -40,6 +40,6 @@ THRESHOLD = 0.5
 BASE_OUTPUT = "output"
 # define the path to the output serialized model, model training
 # plot, and testing image paths
-MODEL_PATH = os.path.join(base_path, BASE_OUTPUT, "unet_tgs_salt.pth")
+MODEL_PATH = os.path.join(base_path, BASE_OUTPUT, "unet_catsAndDogs.pth")
 PLOT_PATH = os.path.join(base_path, BASE_OUTPUT, "plot.png")
 TEST_PATHS = os.path.join(base_path, BASE_OUTPUT, "test_paths.txt")

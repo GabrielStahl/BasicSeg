@@ -20,7 +20,12 @@ class SegmentationDataset(Dataset):
 		# load the image from disk, swap its channels from BGR to RGB,
 		# and read the associated mask from disk in grayscale mode
 		image = cv2.imread(imagePath) # By default cv2 loads as BGR
-		image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+		try:
+			image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+		except:
+			print(f'failure to load image {imagePath}')
+			
 		mask = cv2.imread(self.maskPaths[idx], 0)
 		# check to see if we are applying any transformations
 		if self.transforms is not None:
