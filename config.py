@@ -8,17 +8,19 @@ base_path = "/Users/Gabriel/MResMedicalImaging/RESEARCH_PROJECT/BasicSeg/"
 DATASET_PATH = os.path.join(base_path,"dataset","oxford-iiit-pet")
 
 # define the path to the images and masks dataset
-IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images")
+#IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images")
+IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images_mini")
+
 MASK_DATASET_PATH = os.path.join(DATASET_PATH, "annotations","trimaps")
 # define the path to the checkpoint
 MODEL_CHECKPOINT_PATH = "model_weights"
 
 # define the validation percentage
-VAL_PERCENT = 0.1
+VAL_PERCENT = 0.2
 # batch size for training
-BATCH_SIZE = 128
+BATCH_SIZE = 40
 # learning rate for the optimizer
-LEARNING_RATE = 1e-5
+LEARNING_RATE = 1e-4
 # momentum for the optimizer
 MOMENTUM = 0.999
 # gradient clipping value (for stability while training)
@@ -26,7 +28,7 @@ GRADIENT_CLIPPING = 1.0
 # weight decay (L2 regularization) for the optimizer
 WEIGHT_DECAY = 1e-8
 # number of epochs for training
-EPOCHS = 1
+EPOCHS = 2
 
 # determine the device to be used for training and evaluation
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
